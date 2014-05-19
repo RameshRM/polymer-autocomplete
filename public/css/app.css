@@ -1,0 +1,284 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/* line 157, /Users/ramahadevan/github.com/Payanam/Payanangal/public/css/elements.less */
+.full-width {
+  width: 90%;
+}
+/* line 160, /Users/ramahadevan/github.com/Payanam/Payanangal/public/css/elements.less */
+.half-width {
+  width: 45%;
+}
+/* line 163, /Users/ramahadevan/github.com/Payanam/Payanangal/public/css/elements.less */
+.quarter-width {
+  width: 25%;
+}
+/* line 166, /Users/ramahadevan/github.com/Payanam/Payanangal/public/css/elements.less */
+.actual-width {
+  width: actual;
+}
+/* line 169, /Users/ramahadevan/github.com/Payanam/Payanangal/public/css/elements.less */
+.col-left {
+  float: left;
+}
+/* line 1, /Users/ramahadevan/github.com/Payanam/Payanangal/public/css/form-elements.less */
+form {
+  max-width: 50%;
+  margin: 20px auto;
+  border: solid 1px #fefefe;
+  background-color: #fff;
+}
+/* line 11, /Users/ramahadevan/github.com/Payanam/Payanangal/public/css/form-elements.less */
+form ul.form-elements li {
+  list-style-type: none;
+  position: relative;
+  margin-bottom: 0.5em;
+}
+/* line 16, /Users/ramahadevan/github.com/Payanam/Payanangal/public/css/form-elements.less */
+form label {
+  position: absolute;
+  z-index: 2;
+  right: 100%;
+  width: 100%;
+  margin-right: 100%;
+  top: 0px;
+  transition: background 0.2s, color 0.2s, top 0.2s, bottom 0.2s, right 0.2s, left 0.2s;
+}
+/* line 26, /Users/ramahadevan/github.com/Payanam/Payanangal/public/css/form-elements.less */
+form input {
+  display: block;
+  padding: 0.5em;
+  font-size: 1em;
+  position: relative;
+  border: solid 2px gray;
+}
+/* line 33, /Users/ramahadevan/github.com/Payanam/Payanangal/public/css/form-elements.less */
+form input:focus {
+  border-color: #f06d06;
+}
+/* line 37, /Users/ramahadevan/github.com/Payanam/Payanangal/public/css/form-elements.less */
+form input:focus + label {
+  background: #f06d06;
+  color: white;
+  padding: 0.5em;
+  z-index: 2;
+  text-transform: uppercase;
+  bottom: 2px;
+  right: 0px;
+  margin-right: 0px;
+  width: 50%;
+}
+/* line 50, /Users/ramahadevan/github.com/Payanam/Payanangal/public/css/form-elements.less */
+form input[type="submit"] {
+  background-color: green;
+  color: white;
+  padding: 1em;
+  margin: 20px auto;
+  min-width: 50%;
+}
+/* line 3, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+.nm-np {
+  margin: 0;
+  padding: 0;
+}
+/* line 8, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+.grey {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+/* line 12, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+ul.inline li {
+  display: inline-block;
+}
+/* line 16, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+body {
+  background-color: #F5F5F5;
+  color: #263C81;
+  font-family: "arial";
+}
+/* line 22, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+header {
+  margin: .5em 0;
+  padding: 0 0 .5em 0;
+  -webkit-box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+/* line 28, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+header h1 {
+  margin: 0;
+  padding: .25em 0;
+  font-size: 1.75em;
+}
+/* line 35, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+nav li {
+  margin-right: 2em;
+}
+/* line 39, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+.lang {
+  float: right;
+  margin: -50px 0;
+}
+/* line 44, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+.lang * {
+  display: inline-block;
+  margin-left: .25em;
+}
+/* line 49, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+a {
+  text-decoration: none;
+  color: #00abd5;
+}
+/* line 54, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+a:hover {
+  text-decoration: underline;
+}
+/* line 58, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+.wrapper {
+  max-width: 980px;
+  padding: 0 1em;
+  margin: 0 auto;
+}
+/* line 64, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+.products li {
+  background-color: rgba(255, 255, 255, 0.15);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  padding: .75em;
+  margin: .25em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 72, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+.tiny {
+  font-size: .75em;
+  font-weight: lighter;
+}
+/* line 77, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+.mb2 {
+  margin-bottom: 2em;
+}
+/* line 81, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+#tentacle {
+  position: absolute;
+  height: 415px;
+  width: 326px;
+  background-image: url('/img/Tentacle.png');
+  background-position: 50px 50px;
+  background-repeat: no-repeat;
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+}
+/*CC Checkout*/
+/* line 94, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+.ccForm {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #ccc;
+  display: inline-block;
+}
+/* line 101, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+.ccForm h3 {
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 5px;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #333;
+  margin: 0;
+  padding: .25em 1em;
+}
+/* line 108, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+.ccForm fieldset {
+  padding: 1em;
+  border: none;
+}
+/* line 114, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+:-moz-placeholder {
+  color: #cccccc !important;
+  font-weight: bold;
+}
+/* line 119, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+::-moz-placeholder {
+  color: #cccccc !important;
+  opacity: 1;
+  font-weight: bold;
+}
+/* line 125, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+::-webkit-input-placeholder {
+  color: #cccccc;
+  font-weight: bold;
+}
+/* line 130, /Users/ramahadevan/github.com/Payanam/Payanangal/app */
+:-ms-input-placeholder {
+  color: #cccccc;
+  font-weight: bold;
+}
+
+.autocomplete-ds-items{
+    background-color:white;
+    border:solid 1px #ddd;
+}
+
+.autocomplete-ds-items li{
+    display:inline-block;
+    list-style-type: none;
+    color:#555;
+    padding: 0.5em;
+
+}
+
+.autocomplete-ds-items li:after{
+
+    content: ", ";
+}
+
+.autocomplete-ds-items li:last-child:after{
+  content: "";
+}
+#datalist {
+border-left: 40px solid white;
+  padding: 10px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  padding-right: 50px;
+  margin-left: -20px;
+  display: none;
+}
+
+#datalist:target {
+  display: block;
+-webkit-animation: highlight 1s ease;
+  -moz-animation: highlight 1s ease;
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  -o-transform: translateX(20px);
+}
+
+@-webkit-keyframes highlight {
+  0% { border-left-color: red; }
+  100% { border-left-color: white; }
+}
+@-moz-keyframes highlight {
+  0% { border-left-color: red; }
+  100% { border-left-color: white; }
+}

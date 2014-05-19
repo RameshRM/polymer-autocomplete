@@ -1,0 +1,122 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<script type="text/javascript" src="keyboard.js"></script>
+<script type="text/javascript" src="auto-complete.js"></script>
+
+<polymer-element name="auto-complete" attributes="text watermark dataSource dataList" >
+
+  <template>
+
+<link rel="stylesheet" href="auto-complete.css">
+
+    <form class="ac-form" id="ac">
+
+    <input type="text" class="ac-text" id="text" placeholder='{{watermark}}' value='{{text}}' autocomplete="off" autocorrect="off"/>
+    <section class='ac-result-box' data-ischosen='{{ischosen}}' data-isempty='{{isEmpty}}'>
+        <ul class='ac-result-list'>
+            <template repeat="{{model in dataSource}}">
+                <li class="ac-result-list-item" data-isselected='{{model.isSelected}}'>
+                  <a href='#{{model.suggestedText}}'>
+                    <span class='hint'>{{model.shortText}}</span>
+                    <span>{{model.remainingText}}</span>
+                  </a>
+                </li>
+            </template>
+        </ul>
+    </section>
+    </form>
+
+  </template>
+ <script>
+
+    var data = ['Red', 'Blue', 'Green', 'Yellow', 'Yelp', 'Yello Stone', 'Pink', 'Blah',
+'position','bottom','z-index','background-color','min-width','max-width','border-top-left-radius',
+'border-top-right-radius','border-bottom-right-radius','border-bottom-left-radius'];
+    var suggestions = [];
+    var typeSet = {'min':1, 'highlight' : true};
+    var fastType = new window.fastType(data, typeSet);
+    var _selectedIndex = -1;
+    var _dataSourceMaxLength = -1;
+    Polymer('auto-complete', {
+      dataList : [],
+      text : '',
+      suggestedText:'',
+      ischosen: false,
+      isEmpty : true,
+      minLength: 1,
+      dataSource: {
+
+      },
+      ready: function() {
+        var self = this;
+        keyboard.on({keyMap : keyboard.keyMapDefs.Down, state: 'up'},this.$.text,function(kbEvent){
+          self.clearSelection();
+          _selectedIndex ++;
+          self.setSelection(_selectedIndex);
+        });
+        keyboard.on({keyMap : keyboard.keyMapDefs.Up, state: 'up'},this.$.text,function(kbEvent){
+          self.clearSelection();
+          _selectedIndex --;
+          self.setSelection(_selectedIndex);
+        });
+        this.$.ac['onsubmit'] = function(e){
+          self.chosen();
+          e.preventDefault();
+        };
+        fastType.dataSource = this.dataList;
+        console.log(fastType);
+      },
+      suggestedTextChanged: function(){
+      },
+      dataSourceChanged: function(){
+        if(typeof this.dataSource !== "undefined" && this.dataSource !== null){
+          this.isEmpty = false;
+        }else{
+          this.isEmpty = true;
+        }
+      },
+      textChanged: function(){
+
+        this.dataSource = null;
+        suggestions = fastType.type(this.text);
+
+        if(typeof suggestions !== "undefined"){
+            this.dataSource = suggestions;
+            _dataSourceMaxLength = this.dataSource.length;
+        }
+      },
+      unchosen: function(){
+        this.ischosen=false;
+      },
+      chosen: function(){
+        if(this.suggestedText !== null){
+          this.ischosen=true;
+          this.text = this.suggestedText;
+        }
+      },
+      setSelection: function(selectedIndex){
+        if(selectedIndex >= this.dataSource.length  ){
+          selectedIndex = selectedIndex-1;
+        }
+        if(typeof this.dataSource[selectedIndex] === "undefined" ){
+          this.suggestedText = null;
+          return;
+        }
+        this.dataSource[selectedIndex].isSelected = true;
+        this.suggestedText = this.dataSource[selectedIndex].suggestedText;
+      },
+      clearSelection: function(){
+        if(_selectedIndex <0 || typeof this.dataSource[_selectedIndex] === "undefined"){
+          return;
+        }
+
+        if(_selectedIndex>=0 && typeof this.dataSource !== "undefined"){
+          var model = this.dataSource[_selectedIndex];
+          if(typeof this.dataSource[_selectedIndex] !== "undefined"){
+            this.dataSource[_selectedIndex].isSelected = false;
+          }
+        }
+      }
+
+    });
+  </script>
+</polymer-element>

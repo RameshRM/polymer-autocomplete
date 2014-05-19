@@ -1,0 +1,19 @@
+<layout-use template="../../layouts/master-layout.rhtml">
+    <layout-put into="title" value="Suggestions"/>
+    <layout-put into="body">
+        <h2>Try Auto Complete .. Simple Polymer Based</h2>
+        <section>
+            <div style="float:left;width:100%">
+        <auto-complete watermark='Enter 3 letter word to search...' dataList='["Red", " Blue", " Green", " Yellow", " Yelp", " Yello Stone", " Pink", " Blah", " position", "bottom", "z-index", "background-color", "min-width", "max-width", "border-top-left-radius", " border-top-right-radius", "border-bottom-right-radius", "border-bottom-left-radius"]'></auto-complete><a href='#datalist'>Show Data Source</a>
+    </div>
+    <div id="datalist" style="float:right;border-top:solid 1px red">
+            <h3>Auto Complete - searches and recommends from the following data list </h3>
+            <ul class="autocomplete-ds-items">
+                <c-for each="item in data.items">
+                    <li>${item}</li>
+                </c-for>
+            </ul>
+    </div>
+        </section>
+    </layout-put>
+</layout-use>

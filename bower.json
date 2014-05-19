@@ -1,0 +1,25 @@
+{
+  "name": "polymer-autocomplete",
+  "version": "0.0.1",
+  "homepage": "https://github.com/RameshRM/polymer-autocomplete",
+  "authors": [
+    "ramahadevan <ramahadevan@ebay.com>"
+  ],
+  "description": "Polymer",
+  "keywords": [
+    "polymer",
+    "auto",
+    "complete"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.2.4"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
