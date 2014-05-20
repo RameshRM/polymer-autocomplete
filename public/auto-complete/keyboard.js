@@ -47,6 +47,7 @@
             13: "Enter",
             17: "Control",
             16: "Shift",
+            27: "Esc",
             33: "PageUp",
             34: "PageDown",
             35: "End",
@@ -107,7 +108,6 @@
     function onKeyBoardEvent(evt) {
 
         if (isEventKeyMapDefined(evt.keyCode)) {
-            //this.publishListeners();
         } else {
             killEvent(evt);
         }

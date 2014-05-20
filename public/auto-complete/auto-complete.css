@@ -47,7 +47,10 @@
     border-radius: 3px;
 
 }
-.ac-result-box[data-isempty="true"],.ac-result-box[data-isselected="true"]{
+.ac-result-box[data-isempty="true"],.ac-result-box[data-chosen="true"]{
+    display:none;
+}
+.ac-result-box[data-chosen="true"][data-isempty="false"]{
     display:none;
 }
 

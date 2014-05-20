@@ -1,5 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<script type="text/javascript" src="keyboard.js"></script>
+<script type="text/javascript" src="/auto-complete/keyboard.js"></script>
 <script type="text/javascript" src="auto-complete.js"></script>
 
 <polymer-element name="auto-complete" attributes="text watermark dataSource dataList" >
@@ -7,7 +7,6 @@
   <template>
 
 <link rel="stylesheet" href="auto-complete.css">
-
     <form class="ac-form" id="ac">
 
     <input type="text" class="ac-text" id="text" placeholder='{{watermark}}' value='{{text}}' autocomplete="off" autocorrect="off"/>
@@ -48,6 +47,10 @@
       },
       ready: function() {
         var self = this;
+        keyboard.on({keyMap : keyboard.keyMapDefs.Esc, state: 'up'},this.$.text,function(kbEvent){
+          self.clear();
+        });
+
         keyboard.on({keyMap : keyboard.keyMapDefs.Down, state: 'up'},this.$.text,function(kbEvent){
           self.clearSelection();
           _selectedIndex ++;
@@ -67,8 +70,12 @@
       },
       suggestedTextChanged: function(){
       },
+      clear: function(){
+        this.dataSource = [];
+      },
       dataSourceChanged: function(){
-        if(typeof this.dataSource !== "undefined" && this.dataSource !== null){
+        if(typeof this.dataSource !== "undefined"
+          && this.dataSource !== null || this.dataSource.length <=0){
           this.isEmpty = false;
         }else{
           this.isEmpty = true;
@@ -78,19 +85,16 @@
 
         this.dataSource = null;
         suggestions = fastType.type(this.text);
-
         if(typeof suggestions !== "undefined"){
             this.dataSource = suggestions;
             _dataSourceMaxLength = this.dataSource.length;
         }
-      },
-      unchosen: function(){
-        this.ischosen=false;
+
       },
       chosen: function(){
         if(this.suggestedText !== null){
-          this.ischosen=true;
           this.text = this.suggestedText;
+          this.dataSource = [];
         }
       },
       setSelection: function(selectedIndex){
