@@ -1,0 +1,40 @@
+{
+  "name": "typewriter",
+  "version": "1.0.0",
+  "description": "Client-side javascript library enables to wireup keyboard eventing to DOM elements",
+  "main": "./lib/typewriter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RameshRM/typewriter"
+  },
+  "keywords": [
+    "typewriter",
+    "keyboard eventing",
+    "DOM keyboard eventing"
+  ],
+  "author": "Ramesh Mahadevan",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/RameshRM/typewriter/issues"
+  },
+  "homepage": "https://github.com/RameshRM/typewriter",
+
+  "dependencies": {
+    "mocha": "*",
+    "chai" : "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-contrib-watch": "~0.4.0",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt": "~0.4.1",
+    "grunt-browserify": "~1.0.0",
+    "grunt-simple-mocha" : "*",
+    "grunt-cli": "~0.1.8"
+  }
+}

@@ -13,7 +13,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "polymer": "Polymer/polymer#~0.2.4"
+    "polymer": "Polymer/polymer#~0.2.4",
+    "kbDom": "*"
   },
   "ignore": [
     "**/.*",

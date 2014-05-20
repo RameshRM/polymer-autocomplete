@@ -1,0 +1,31 @@
+{
+  "name": "typewriter",
+  "homepage": "https://github.com/RameshRM/typewriter",
+  "authors": [
+    "ramahadevan <rmrmail@gmai.com>"
+  ],
+  "main": "./dist/typewriter.min.js",
+  "keywords": [
+    "typewriter",
+    "dom",
+    "keyboard",
+    "traversal"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "201b4869e3",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "201b4869e33c98d85b7bec5883e80fcd1205a123"
+  },
+  "_source": "git://github.com/RameshRM/typewriter.git",
+  "_target": "*",
+  "_originalSource": "kbDom"
+}

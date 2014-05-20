@@ -1,0 +1,23 @@
+{
+  "name": "typewriter",
+  "version": "1.0.0",
+  "homepage": "https://github.com/RameshRM/typewriter",
+  "authors": [
+    "ramahadevan <rmrmail@gmai.com>"
+  ],
+  "main": "./dist/typewriter.min.js",
+  "keywords": [
+    "typewriter",
+    "dom",
+    "keyboard",
+    "traversal"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
