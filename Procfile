@@ -1,1 +1,1 @@
-web: node app.js 3000
+web: node app.js
