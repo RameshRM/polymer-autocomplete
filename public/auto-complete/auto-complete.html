@@ -14,7 +14,7 @@
         <ul class='ac-result-list'>
             <template repeat="{{model in dataSource}}">
                 <li class="ac-result-list-item" data-isselected='{{model.isSelected}}'>
-                  <a href='#{{model.suggestedText}}'>
+                  <a href='#{{model.suggestedText}}' onclick='{{chosen}}'>
                     <span class='hint'>{{model.shortText}}</span>
                     <span>{{model.remainingText}}</span>
                   </a>
@@ -66,7 +66,7 @@
           e.preventDefault();
         };
         fastType.dataSource = this.dataList;
-        console.log(fastType);
+
       },
       suggestedTextChanged: function(){
       },

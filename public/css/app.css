@@ -286,3 +286,19 @@ border-left: 40px solid transparent;
   0% { border-left-color: red; }
   100% { border-left-color: white; }
 }
+.col-left{
+  float:left;width:60%
+}
+.col-right{
+  float:right;border-left:solid 0.2em #a5a5a5; border-radius:3px; width:30%;margin:2em;padding:1em; min-height:15em;max-height:20em
+}
+
+@media (max-width: 600px) {
+  .col-left{
+    width:100%;
+  }
+
+  .col-right {
+    display: none;
+  }
+}
