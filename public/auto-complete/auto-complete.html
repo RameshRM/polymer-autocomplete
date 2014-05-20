@@ -75,7 +75,8 @@
       },
       dataSourceChanged: function(){
         if(typeof this.dataSource !== "undefined"
-          && this.dataSource !== null || this.dataSource.length <=0){
+          && this.dataSource !== null
+          && this.dataSource.length >0){
           this.isEmpty = false;
         }else{
           this.isEmpty = true;
