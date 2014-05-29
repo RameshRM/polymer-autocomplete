@@ -84,15 +84,20 @@ ul.ac-result-list{
     border-color: transparent;
     border:solid 1px transparent;
     border-radius:3px;
-    color:#555;
+    color:auto;
     font-weight:normal;
     clear:both;
     overflow: hidden;
 
 }
+.ac-result-list-item a{
+    text-decoration: none;
+    color:auto;
+}
 .ac-result-list-item .hint{
     font-weight:bold;
     margin-right:-5px;
+    color:green;
 }
 .ac-result-list-item[data-ischosen="true"]{
     background-color:#efefef;

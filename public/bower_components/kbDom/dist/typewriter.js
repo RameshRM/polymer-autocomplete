@@ -94,6 +94,7 @@
     }
 
     function bindEvent(ctx, eventName) {
+
         if (ctx.attachEvent) {
             ctx.attachEvent(eventName, function(e) {
                 onKeyBoardEvent(e);

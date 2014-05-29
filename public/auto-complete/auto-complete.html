@@ -2,19 +2,19 @@
 <script type="text/javascript" src="../bower_components/kbDom/dist/typewriter.min.js"></script>
 <script type="text/javascript" src="auto-complete.js"></script>
 
-<polymer-element name="auto-complete" attributes="text watermark dataSource dataList" >
+<polymer-element name="auto-complete" attributes="text watermark dataSource dataList focus" >
 
   <template>
 
 <link rel="stylesheet" href="auto-complete.css">
     <form class="ac-form" id="ac">
 
-    <input type="text" class="ac-text" id="text" placeholder='{{watermark}}' value='{{text}}' autocomplete="off" autocorrect="off"/>
+    <input type="text" class="ac-text" id="text" placeholder='{{watermark}}' value='{{text}}' autocomplete="off" autocorrect="off" autofocus="{{focus}}" />
     <section class='ac-result-box' data-ischosen='{{ischosen}}' data-isempty='{{isEmpty}}'>
         <ul class='ac-result-list'>
             <template repeat="{{model in dataSource}}">
                 <li class="ac-result-list-item" data-isselected='{{model.isSelected}}'>
-                  <a href='#{{model.suggestedText}}' onclick='{{chosen}}'>
+                  <a href='#{{model.suggestedText}}' on-click="{{onSelectionChanged_}}" data-suggested="{{model.suggestedText}}">
                     <span class='hint'>{{model.shortText}}</span>
                     <span>{{model.remainingText}}</span>
                   </a>
@@ -42,6 +42,7 @@
       ischosen: false,
       isEmpty : true,
       minLength: 1,
+      focus: '',
       dataSource: {
 
       },
@@ -66,7 +67,6 @@
           e.preventDefault();
         };
         fastType.dataSource = this.dataList;
-
       },
       suggestedTextChanged: function(){
       },
@@ -96,6 +96,12 @@
         if(this.suggestedText !== null){
           this.text = this.suggestedText;
           this.dataSource = [];
+        }
+      },
+      onSelectionChanged_ : function(e,detail, sender){
+        if(sender !== "undefined"){
+          this.suggestedText = sender.getAttribute("data-suggested");
+          this.chosen();
         }
       },
       setSelection: function(selectedIndex){
